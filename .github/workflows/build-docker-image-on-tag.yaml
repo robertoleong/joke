@@ -1,12 +1,16 @@
+#on:
+#  push:
+#    tags:
+#      - '*PROD*'
 on:
   push:
-    tags:
-      - '*PROD*'
+    branches:
+      - 'master'
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build and test
         run: ./mvnw clean package
       - name: Build Docker image
