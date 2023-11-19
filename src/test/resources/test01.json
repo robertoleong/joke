@@ -1,0 +1,167 @@
+
+{
+  "error": false,
+  "amount": 10,
+  "jokes": [
+    {
+      "category": "Programming",
+      "type": "single",
+      "joke": "Your momma is so fat, you need to switch to NTFS to store a picture of her.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": true
+      },
+      "id": 55,
+      "safe": false,
+      "lang": "en"
+    },
+    {
+      "category": "Misc",
+      "type": "single",
+      "joke": "Never date a baker. They're too kneady.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "safe": true,
+      "id": 271,
+      "lang": "en"
+    },
+    {
+      "category": "Misc",
+      "type": "single",
+      "joke": "What does the MacBook have in common with Donald Trump?\n\nI would tell you....\nBut I don't compare apples to oranges.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": true,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 233,
+      "safe": false,
+      "lang": "en"
+    },
+    {
+      "category": "Pun",
+      "type": "single",
+      "joke": "I'm reading a book about anti-gravity. It's impossible to put down!",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 126,
+      "safe": true,
+      "lang": "en"
+    },
+    {
+      "category": "Misc",
+      "type": "single",
+      "joke": "My parents raised me as an only child, which really annoyed my younger brother.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 235,
+      "safe": true,
+      "lang": "en"
+    },
+    {
+      "category": "Misc",
+      "type": "single",
+      "joke": "Two reasons I don't give money to homeless people.\n1) They are going to spend it all on drugs and alcohol\n2) I am going to spend it all on drugs and alcohol.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 72,
+      "safe": false,
+      "lang": "en"
+    },
+    {
+      "category": "Programming",
+      "type": "single",
+      "joke": "\"Honey, go to the store and buy some eggs.\"\n\"OK.\"\n\"Oh and while you're there, get some milk.\"\nHe never returned.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 18,
+      "safe": true,
+      "lang": "en"
+    },
+    {
+      "category": "Dark",
+      "type": "single",
+      "joke": "My ex had an accident. I told the paramedics the wrong blood type for her. She'll finally experience what rejection is really like.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 152,
+      "safe": false,
+      "lang": "en"
+    },
+    {
+      "category": "Pun",
+      "type": "single",
+      "joke": "To whoever stole my copy of Microsoft Office, I will find you. You have my Word!",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 191,
+      "safe": true,
+      "lang": "en"
+    },
+    {
+      "category": "Misc",
+      "type": "single",
+      "joke": "Women are like KFC, once you're done with the breasts and thighs, you just have a greasy box to put your bone in.",
+      "flags": {
+        "nsfw": true,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": true,
+        "explicit": true
+      },
+      "id": 149,
+      "safe": false,
+      "lang": "en"
+    }
+  ]
+}

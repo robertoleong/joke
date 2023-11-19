@@ -1,0 +1,11 @@
+{
+  "error": true,
+  "internalError": false,
+  "code": 106,
+  "message": "No matching joke found",
+  "causedBy": [
+    "No jokes were found that match your provided filter(s)"
+  ],
+  "additionalInfo": "The specified category is invalid - Got: \"foo\" - Possible categories are: \"Any, Misc, Programming, Dark, Pun, Spooky, Christmas\" (case insensitive)",
+  "timestamp": 1579170794412
+}
