@@ -19,6 +19,8 @@ jobs:
       - name: Build and test
         run: ./mvnw clean package
       - name: Build Docker image
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           docker build -t ns-joke-app .
           docker tag ns-joke-app  ghcr.io/robertoleong/ns-joke:latest
