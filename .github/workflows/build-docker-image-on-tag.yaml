@@ -16,7 +16,6 @@ jobs:
         with:
           distribution: 'oracle'
           java-version: '17'
-          
       - name: Build and test
         run: ./mvnw clean package
 
@@ -25,6 +24,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+
+      - name: Build Docker image
+        #env:
+          #NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           docker build -t ns-joke .
           docker tag ns-joke  ghcr.io/robertoleong/ns-joke:latest
