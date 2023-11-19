@@ -1,0 +1,16 @@
+on:
+  push:
+    tags:
+      - '*PROD*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and test
+        run: ./mvnw clean package
+      - name: Build Docker image
+        run: |
+          docker build -t ns-joke-app .
+          docker tag ns-joke-app  ghcr.io/robertoleong/ns-joke-app:latest
+          docker push  ghcr.io/robertoleong/ns-joke-app
