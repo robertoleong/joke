@@ -94,8 +94,8 @@
 				<version>0.8.11</version>
 				<configuration>
 					<excludes>
-						<exclude>com/leongjoke/JokeApplication.class</exclude>
-						<exclude>com/leongjoke/domain/Joke.class</exclude>
+						<exclude>com/leong/joke/JokeApplication.class</exclude>
+						<exclude>com/leong/joke/domain/Joke.class</exclude>
 						<exclude>com/leong/joke/exception/JokeException.class</exclude>
 						<exclude>com/leong/joke/util/CONSTS.class</exclude>
 						<exclude>com/leong/joke/jpa/JokeEntity.class</exclude>
