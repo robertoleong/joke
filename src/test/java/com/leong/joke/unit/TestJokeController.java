@@ -34,9 +34,6 @@ class TestJokeController {
     @MockBean
     private JokeApiService jokeApiService;
 
-    //@MockBean
-    //private JokeRepository repo;
-
     @BeforeEach
     void setUp() {
         mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();

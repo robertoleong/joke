@@ -22,7 +22,6 @@ public class JokeApiService {
         this.blacklist = blacklist;
     }
 
-
     public Joke getJoke() throws JokeException {
         final String response = new ApiRequest(url + "&" + blacklist).connect();
         JsonNode jsonNode;

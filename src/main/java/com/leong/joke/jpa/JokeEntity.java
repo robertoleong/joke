@@ -9,8 +9,6 @@ public class JokeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
-
     @Column(unique = true)
     private String jokeId;
     private String text;

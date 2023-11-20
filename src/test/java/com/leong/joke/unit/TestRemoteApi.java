@@ -9,7 +9,7 @@ public class TestRemoteApi {
 
     @Test
     public void error() {
-        // range is set to a string instead of e.g. 1-10
+        // range is set to a string instead of 1-10
         // see test02.jon for example error message
         ApiRequest request = new ApiRequest("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious&idRange=abc&amount=1");
         String response = request.connect();
