@@ -31,4 +31,4 @@ jobs:
         run: |
           docker build -t joke .
           docker tag joke  ghcr.io/robertoleong/joke-https:latest
-          docker push  ghcr.io/robertoleong/joke
+          docker push  ghcr.io/robertoleong/joke-https
