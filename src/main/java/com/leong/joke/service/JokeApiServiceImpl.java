@@ -3,9 +3,9 @@ package com.leong.joke.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.leong.joke.domain.Joke;
+import com.leong.joke.exception.JokeException;
 import com.leong.joke.util.ApiRequest;
 import com.leong.joke.util.JsonUtil;
-import com.leong.joke.exception.JokeException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ public class JokeApiServiceImpl implements JokeApiService {
     private final String blacklist;
 
 
-    public JokeApiServiceImpl( @Value("${joke.url}") String url, @Value("${joke.url.blacklist}") String blacklist) {
+    public JokeApiServiceImpl(@Value("${joke.url}") String url, @Value("${joke.url.blacklist}") String blacklist) {
         this.url = url;
         this.blacklist = blacklist;
     }
@@ -25,7 +25,7 @@ public class JokeApiServiceImpl implements JokeApiService {
 
     public Joke getJoke() throws JokeException {
         final String response = new ApiRequest(url + "&" + blacklist).connect();
-        JsonNode jsonNode = null;
+        JsonNode jsonNode;
 
         try {
             jsonNode = JsonUtil.parse(response);

@@ -21,7 +21,9 @@ public class TestJokeRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Autowired protected JokeRepository repo;
+    @Autowired
+    protected JokeRepository repo;
+
     @Test
     public void testSearch() {
         repo.save(new JokeEntity("1", "dasda asd here dfsdfd"));

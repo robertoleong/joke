@@ -15,7 +15,9 @@ public class JsonUtil {
     private JsonUtil() {
 
     }
+
     final static Joke error = new Joke("-1", "error");
+
     static public Joke filterShortestJoke(JsonNode jsonNode) {
         // Convert the JSON document to a stream of objects
         Stream<JsonNode> stream = StreamSupport.stream(jsonNode.get("jokes").spliterator(), false);

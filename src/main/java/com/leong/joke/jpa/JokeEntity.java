@@ -11,7 +11,7 @@ public class JokeEntity {
     private long id;
 
 
-    @Column(unique=true)
+    @Column(unique = true)
     private String jokeId;
     private String text;
 

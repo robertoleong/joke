@@ -27,20 +27,21 @@ import static org.mockito.Mockito.when;
 //@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 
 class TestJokeController {
-    private  MockMvc mvc;
+    private MockMvc mvc;
     @Autowired
     private WebApplicationContext webApplicationContext;
 
     @MockBean
     private JokeApiService jokeApiService;
 
-   //@MockBean
+    //@MockBean
     //private JokeRepository repo;
 
     @BeforeEach
     void setUp() {
         mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
+
     @Test
     void shortestJoke() throws Exception {
         when(jokeApiService.getJoke()).thenReturn(new Joke(CONSTS.ERROR_ID, CONSTS.DUMMY));
@@ -49,6 +50,7 @@ class TestJokeController {
         assertEquals(200, status);
 
     }
+
     @Test
     void putValid() throws Exception {
         when(jokeApiService.getJoke()).thenReturn(new Joke(CONSTS.ERROR_ID, CONSTS.DUMMY));
@@ -69,7 +71,7 @@ class TestJokeController {
 
     @Test
     void saveJoke() throws Exception {
-        when(jokeApiService.getJoke()).thenReturn(new Joke("10000",  CONSTS.DUMMY));
+        when(jokeApiService.getJoke()).thenReturn(new Joke("10000", CONSTS.DUMMY));
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/api/joke")).andReturn();
         String response = mvcResult.getResponse().getContentAsString();
         assertTrue(response.contains(CONSTS.DUMMY));
@@ -86,7 +88,7 @@ class TestJokeController {
 
     @Test
     void searchNotEmpty() throws Exception {
-        when(jokeApiService.getJoke()).thenReturn(new Joke("10000",  CONSTS.DUMMY));
+        when(jokeApiService.getJoke()).thenReturn(new Joke("10000", CONSTS.DUMMY));
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/api/joke")).andReturn();
         mvcResult = mvc.perform(MockMvcRequestBuilders.get("/api/search?pattern=")).andReturn();
         String response = mvcResult.getResponse().getContentAsString();

@@ -4,10 +4,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.leong.joke.domain.Joke;
 import com.leong.joke.exception.JokeException;
+import com.leong.joke.service.JokeApiService;
 import com.leong.joke.service.JokeApiServiceImpl;
 import com.leong.joke.util.CONSTS;
 import com.leong.joke.util.JsonUtil;
-import com.leong.joke.service.JokeApiService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
@@ -64,7 +64,7 @@ class TestJokeApiService {
     public void testNonSecure() {
         JokeApiService service = new JokeApiServiceImpl("http://v2.jokeapi.dev/joke/Any?type=single&amount=10", "blacklistFlags=nsfw,racist,sexist");
         try {
-           service.getJoke();
+            service.getJoke();
         } catch (JokeException e) {
             // it's supposed to fail since http is not supported
         }

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Repository
 public interface JokeRepository extends JpaRepository<JokeEntity, Long> {
-    public List<JokeEntity> findByTextContains(String match);
+    List<JokeEntity> findByTextContains(String match);
 
-    public boolean existsByJokeId(String jokeId);
+    boolean existsByJokeId(String jokeId);
 }
