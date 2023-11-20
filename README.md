@@ -40,7 +40,24 @@ http://localhost:8080/api/joke
 
 mvn spring-boot:stop
 
-## 3. Implementation of requirements
+
+## 3. Run using https
+
+A docker image has been created with https support
+
+docker run -p 443:8443 ghcr.io/robertoleong/joke-https:latest
+
+A self signed certificate is used which will cause curl and browsers to complain.
+
+### Test with curl
+
+curl -w '\n' --insecure https://localhost/api/joke
+
+### Test in browser
+
+https://localhost/api/joke
+
+## 4. Implementation of requirements
 
 After reading the requirements for this task, several assumptions were made after careful deliberation
 which will be explained in this section.
@@ -59,8 +76,8 @@ Changing **type** will cause the application to behave erratically.
 
 To reflect the changes in **application.properties** a rebuild of the application is required.
 
-## 4. Implementation details
+## 5. Implementation details
 To be discussed in a interview.
 
-## 5. Testing
+## 6. Testing
 
