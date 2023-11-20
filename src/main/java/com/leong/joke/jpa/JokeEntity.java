@@ -1,4 +1,4 @@
-package com.leong.ns.joke.jpa;
+package com.leong.joke.jpa;
 
 import jakarta.persistence.*;
 

@@ -1,16 +1,14 @@
-package com.leong.ns.joke.controller;
+package com.leong.joke.controller;
 
-import com.leong.ns.joke.domain.Joke;
-import com.leong.ns.joke.jpa.JokeEntity;
-import com.leong.ns.joke.jpa.JokeRepository;
-import com.leong.ns.joke.service.JokeApiService;
-import com.leong.ns.joke.util.CONSTS;
+import com.leong.joke.domain.Joke;
+import com.leong.joke.jpa.JokeEntity;
+import com.leong.joke.jpa.JokeRepository;
+import com.leong.joke.util.CONSTS;
+import com.leong.joke.service.JokeApiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 public class JokeController {

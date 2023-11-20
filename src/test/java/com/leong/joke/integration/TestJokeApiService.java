@@ -1,13 +1,13 @@
-package com.leong.ns.joke.integration;
+package com.leong.joke.integration;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.leong.ns.joke.domain.Joke;
-import com.leong.ns.joke.exception.JokeException;
-import com.leong.ns.joke.service.JokeApiServiceImpl;
-import com.leong.ns.joke.util.CONSTS;
-import com.leong.ns.joke.util.JsonUtil;
-import com.leong.ns.joke.service.JokeApiService;
+import com.leong.joke.domain.Joke;
+import com.leong.joke.exception.JokeException;
+import com.leong.joke.service.JokeApiServiceImpl;
+import com.leong.joke.util.CONSTS;
+import com.leong.joke.util.JsonUtil;
+import com.leong.joke.service.JokeApiService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;

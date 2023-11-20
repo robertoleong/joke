@@ -1,4 +1,4 @@
-package com.leong.ns.joke.util;
+package com.leong.joke.util;
 
 final public class CONSTS {
     final static public String ERROR_ID = "-1";

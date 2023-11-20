@@ -1,4 +1,4 @@
-package com.leong.ns.joke.exception;
+package com.leong.joke.exception;
 
 public class JokeException extends RuntimeException {
     public JokeException(String msg) {

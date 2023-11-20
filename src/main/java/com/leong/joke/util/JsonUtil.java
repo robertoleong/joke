@@ -1,9 +1,9 @@
-package com.leong.ns.joke.util;
+package com.leong.joke.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.leong.ns.joke.domain.Joke;
+import com.leong.joke.domain.Joke;
 
 import java.util.Comparator;
 import java.util.Optional;

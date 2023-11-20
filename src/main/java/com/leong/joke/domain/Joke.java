@@ -1,4 +1,4 @@
-package com.leong.ns.joke.domain;
+package com.leong.joke.domain;
 
 public record Joke(String id, String randomJoke) {
 

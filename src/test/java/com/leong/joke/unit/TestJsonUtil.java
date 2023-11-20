@@ -1,10 +1,10 @@
-package com.leong.ns.joke.unit;
+package com.leong.joke.unit;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import com.leong.ns.joke.domain.Joke;
-import com.leong.ns.joke.util.JsonUtil;
+import com.leong.joke.domain.Joke;
+import com.leong.joke.util.JsonUtil;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;

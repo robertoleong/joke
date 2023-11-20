@@ -1,4 +1,4 @@
-package com.leong.ns.joke.util;
+package com.leong.joke.util;
 
 import org.springframework.web.client.RestTemplate;
 

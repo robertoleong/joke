@@ -1,7 +1,7 @@
-package com.leong.ns.joke.exception;
+package com.leong.joke.exception;
 
-import com.leong.ns.joke.domain.Joke;
-import com.leong.ns.joke.util.CONSTS;
+import com.leong.joke.domain.Joke;
+import com.leong.joke.util.CONSTS;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;

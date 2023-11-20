@@ -1,11 +1,11 @@
-package com.leong.ns.joke.service;
+package com.leong.joke.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.leong.ns.joke.util.ApiRequest;
-import com.leong.ns.joke.domain.Joke;
-import com.leong.ns.joke.exception.JokeException;
-import com.leong.ns.joke.util.JsonUtil;
+import com.leong.joke.domain.Joke;
+import com.leong.joke.util.ApiRequest;
+import com.leong.joke.util.JsonUtil;
+import com.leong.joke.exception.JokeException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.leong.ns.joke.unit;
+package com.leong.joke.unit;
 
-import com.leong.ns.joke.util.ApiRequest;
+import com.leong.joke.util.ApiRequest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

@@ -1,16 +1,13 @@
-package com.leong.ns.joke.functional;
+package com.leong.joke.functional;
 
-import com.leong.ns.joke.JokeApplication;
-import com.leong.ns.joke.domain.Joke;
-import com.leong.ns.joke.jpa.JokeRepository;
-import com.leong.ns.joke.util.CONSTS;
-import com.leong.ns.joke.exception.JokeException;
-import com.leong.ns.joke.service.JokeApiService;
+import com.leong.joke.JokeApplication;
+import com.leong.joke.domain.Joke;
+import com.leong.joke.exception.JokeException;
+import com.leong.joke.service.JokeApiService;
+import com.leong.joke.util.CONSTS;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
@@ -20,10 +17,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import static java.util.Collections.emptyList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 
