@@ -1,4 +1,4 @@
-package com.leong.joke.functional;
+package com.leong.joke.unit;
 
 import com.leong.joke.JokeApplication;
 import com.leong.joke.domain.Joke;
