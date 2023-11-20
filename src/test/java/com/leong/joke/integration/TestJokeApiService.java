@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.leong.joke.domain.Joke;
 import com.leong.joke.exception.JokeException;
 import com.leong.joke.service.JokeApiService;
-import com.leong.joke.service.JokeApiServiceImpl;
+
 import com.leong.joke.util.CONSTS;
 import com.leong.joke.util.JsonUtil;
 import org.junit.jupiter.api.Assertions;
@@ -22,7 +22,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 class TestJokeApiService {
 
     final JokeApiService service =
-            new JokeApiServiceImpl("https://v2.jokeapi.dev/joke/Any?type=single&amount=10", "blacklistFlags=nsfw,racist,sexist");
+            new JokeApiService("https://v2.jokeapi.dev/joke/Any?type=single&amount=10", "blacklistFlags=nsfw,racist,sexist");
 
     @Test
     public void joke() {
@@ -62,7 +62,7 @@ class TestJokeApiService {
 
     @Test
     public void testNonSecure() {
-        JokeApiService service = new JokeApiServiceImpl("http://v2.jokeapi.dev/joke/Any?type=single&amount=10", "blacklistFlags=nsfw,racist,sexist");
+        JokeApiService service = new JokeApiService("http://v2.jokeapi.dev/joke/Any?type=single&amount=10", "blacklistFlags=nsfw,racist,sexist");
         try {
             service.getJoke();
         } catch (JokeException e) {
