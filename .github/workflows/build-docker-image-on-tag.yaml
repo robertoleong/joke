@@ -28,9 +28,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Docker image
-        #env:
-          #NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           docker build -t joke .
           docker tag ns-joke  ghcr.io/robertoleong/joke:latest
-          docker push  ghcr.io/robertoleong/njoke
+          docker push  ghcr.io/robertoleong/joke
