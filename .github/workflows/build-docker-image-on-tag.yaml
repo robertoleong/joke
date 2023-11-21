@@ -35,5 +35,5 @@ jobs:
         run: |
           docker build -t joke .
           docker tag joke  ghcr.io/robertoleong/joke:latest
-          docker tag joke  ghcr.io/robertoleong/joke:${{ env.VERSION }}
+          docker tag joke  ghcr.io/robertoleong/joke:$(echo ${{ env.VERSION }})
           docker push  ghcr.io/robertoleong/joke
