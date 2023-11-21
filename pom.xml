@@ -10,17 +10,11 @@
 	</parent>
 	<groupId>com.roberto.ns</groupId>
 	<artifactId>joke</artifactId>
-	<version>0.0.1-PROD</version>
+	<version>1.0.0-PROD</version>
 	<name>ns-joke</name>
 	<description>ns-joke</description>
 	<properties>
 		<java.version>17</java.version>
-			<!-- JaCoCo Properties -->
-<!--			<jacoco.version>0.8.11</jacoco.version>
-			<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-			<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-			<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
-			<sonar.language>java</sonar.language>-->
 
 	</properties>
 	<dependencies>
@@ -65,16 +59,6 @@
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-<!--		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>-->
-		<!--		<dependency>-->
-<!--			<groupId>org.jacoco</groupId>-->
-<!--			<artifactId>jacoco-maven-plugin</artifactId>-->
-<!--			<version>0.8.11</version>-->
-
-<!--		</dependency>-->
 	</dependencies>
 
 	<build>

@@ -76,10 +76,26 @@ Changing **type** will cause the application to behave erratically.
 
 To reflect the changes in **application.properties** a rebuild of the application is required.
 
-## 5. Implementation details
+## 5. Extra functionality - JPA
+
+Everytime a random joke is generated it's saved to an in-memory SQL database using JPA.
+
+A Rest Api was created to search the saved jokes. To view all stored jokes use one of the following methods
+
+http://localhost:8080/api/search
+
+curl -w '\n' localhost:8080/api/search
+
+A **pattern** parameter can be added to filter the search
+
+http://localhost:8080/api/search?pattern=somevalue
+
+curl -w '\n' localhost:8080/api/search?pattern=somevalue
+
+## 6. Implementation details
 To be discussed in a interview.
 
-## 6. Testing
+## 7. Testing
 Jacoco is used to generate testing coverage, the file can be found in this location:
 (assuming maven was used to package the application)
 
@@ -87,8 +103,7 @@ Jacoco is used to generate testing coverage, the file can be found in this locat
 
 From our testing in linux, firefox displays the page correctly, chrome not.
 
-## 7. CI/CD
+## 8. CI/CD
 There's a github action that triggers on every push request. It builds, tests and creates
 a docker image which is then uploaded to a docker repository.
-
 

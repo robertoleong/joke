@@ -13,11 +13,21 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
 class TestApi {
-
     @Test
-    public void testJokeApi() throws Exception {
+    public void joke() {
         ApiRequest request = new ApiRequest("http://localhost:8080/api/joke");
         String response = request.connect();
         assertTrue(response.contains("randomJoke"));
     }
+    @Test
+    public void search() {
+        new ApiRequest("http://localhost:8080/api/joke").connect();
+        new ApiRequest("http://localhost:8080/api/joke").connect();
+
+        String joke = new ApiRequest("http://localhost:8080/api/joke").connect();
+        String search = new ApiRequest("http://localhost:8080/api/search").connect();
+        // search result must contain last joke
+        assertTrue(search.contains(joke));
+    }
 }
+
