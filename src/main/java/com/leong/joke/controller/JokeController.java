@@ -43,7 +43,7 @@ public class JokeController {
         if (!joke.id().equals(CONSTS.ERROR_ID) && !repo.existsByJokeId(joke.id())) {
 
             repo.save(new JokeEntity(joke.id(), joke.randomJoke()));
-            logger.info("Joke: " + joke + " has been saved.");
+            logger.debug("Joke: " + joke + " has been saved.");
         }
 
         return joke;
@@ -58,8 +58,8 @@ public class JokeController {
         List<JokeEntity> entities = repo.findByTextContains(pattern);
         List<Joke> jokes = entities.stream().map(entity -> new Joke(entity.getJokeId(), entity.getText())).toList();
 
-        logger.info("Search with pattern: " + (pattern.isEmpty() ? "no pattern inserted" : pattern));
-        logger.info("Results: " + jokes);
+        logger.debug("Search with pattern: " + (pattern.isEmpty() ? "no pattern inserted" : pattern));
+        logger.debug("Results: " + jokes);
         if (jokes.isEmpty()) {
             return List.of(new Joke(CONSTS.ERROR_ID, CONSTS.NO_RESULTS));
         }

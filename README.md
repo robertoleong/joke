@@ -5,7 +5,7 @@
 ### 1. Using a docker image
 #### Download and run image (make sure you have docker installed for your OS)
 
-docker run -p 80808:8080 ghcr.io/robertoleong/joke:latest
+docker run -p 8080:8080 ghcr.io/robertoleong/joke:latest
 
 ### Test with curl
 
@@ -40,22 +40,21 @@ http://localhost:8080/api/joke
 
 mvn spring-boot:stop
 
+## 3. Extra functionality - JPA
 
-## 3. Run using https
+Everytime a random joke is generated it's saved to an in-memory SQL database using JPA.
 
-A docker image has been created with https support
+A Rest Api was created to search the saved jokes. To view all stored jokes use one of the following methods
 
-docker run -p 443:8443 ghcr.io/robertoleong/joke-https:latest
+http://localhost:8080/api/search
 
-A self signed certificate is used which will cause curl and browsers to complain.
+curl -w '\n' localhost:8080/api/search
 
-### Test with curl
+A **pattern** parameter can be added to filter the search
 
-curl -w '\n' --insecure https://localhost/api/joke
+http://localhost:8080/api/search?pattern=somevalue
 
-### Test in browser
-
-https://localhost/api/joke
+curl -w '\n' localhost:8080/api/search?pattern=somevalue
 
 ## 4. Implementation of requirements
 
@@ -72,30 +71,36 @@ Any filter supported by the jokeapi can be added or removed here.
 
 The **amount** property should be a value between 1-10.
 
-Changing **type** will cause the application to behave erratically. 
+Changing **type** will cause the application to behave erratically.
 
 To reflect the changes in **application.properties** a rebuild of the application is required.
 
-## 5. Extra functionality - JPA
+## 5. Swagger
 
-Everytime a random joke is generated it's saved to an in-memory SQL database using JPA.
+Swagger documentation be accessed here:
 
-A Rest Api was created to search the saved jokes. To view all stored jokes use one of the following methods
+http://localhost:8080/swagger-ui/index.html
 
-http://localhost:8080/api/search
+## 6. Run using https
 
-curl -w '\n' localhost:8080/api/search
+A docker image has been created with https support
 
-A **pattern** parameter can be added to filter the search
+docker run -p 443:8443 ghcr.io/robertoleong/joke-https:latest
 
-http://localhost:8080/api/search?pattern=somevalue
+A self signed certificate is used which will cause curl and browsers to complain.
 
-curl -w '\n' localhost:8080/api/search?pattern=somevalue
+### Test with curl
 
-## 6. Implementation details
+curl -w '\n' --insecure https://localhost/api/joke
+
+### Test in browser
+
+https://localhost/api/joke
+
+## 7. Implementation details
 To be discussed in a interview.
 
-## 7. Testing
+## 8. Testing
 Jacoco is used to generate testing coverage, the file can be found in this location:
 (assuming maven was used to package the application)
 
@@ -103,15 +108,9 @@ Jacoco is used to generate testing coverage, the file can be found in this locat
 
 From our testing in linux, firefox displays the page correctly, chrome not.
 
-## 8. CI/CD
+## 9. CI/CD
 There's a github action that triggers on every push request. It builds, tests and creates
 a docker image which is then uploaded to a [docker repository](https://github.com/robertoleong/joke/pkgs/container/joke)
-
-## 9. Swagger
-
-Swagger documentation be accessed here:
-
-http://localhost:8080/swagger-ui/index.html
 
 ## 10. EKS
 The application has been deployed in a Amazon Kubernetes cluster with 3 nodes.
