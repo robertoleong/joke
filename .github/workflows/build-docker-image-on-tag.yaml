@@ -20,7 +20,7 @@ jobs:
           java-version: '17'
       - name: Build and test
         run: |
-          $VERSION=$(./mvnw org.apache.maven.plugins:maven-help-plugin:3.4.0:evaluate -Dexpression=project.version))
+          $VERSION=$(./mvnw org.apache.maven.plugins:maven-help-plugin:3.4.0:evaluate -Dexpression=project.version)
           echo $VERSION
           ./mvnw clean package
 
