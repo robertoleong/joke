@@ -105,5 +105,14 @@ From our testing in linux, firefox displays the page correctly, chrome not.
 
 ## 8. CI/CD
 There's a github action that triggers on every push request. It builds, tests and creates
-a docker image which is then uploaded to a docker repository.
+a docker image which is then uploaded to a [docker repository](https://github.com/robertoleong/joke/pkgs/container/joke)
 
+## 9. Swagger
+
+Swagger documentation be accessed here:
+
+http://localhost:8080/swagger-ui/index.html
+
+## 10. EKS
+The application has been deployed in a Amazon Kubernetes cluster with 3 nodes.
+For budget reasons is currently unavailable. It will be available in an interview.

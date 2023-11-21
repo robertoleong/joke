@@ -5,6 +5,10 @@ import com.leong.joke.jpa.JokeEntity;
 import com.leong.joke.jpa.JokeRepository;
 import com.leong.joke.service.JokeApiService;
 import com.leong.joke.util.CONSTS;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +33,9 @@ public class JokeController {
         this.repo = repo;
     }
 
-
+    @Operation(summary = "Retrieves an array of jokes taken from the external API. The shortest one is picked.\n" +
+            "The joke being returned is safe to display and are not sexist or explicit")
+    @ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Successfully retrieved joke")})
     @RequestMapping(value = "/api/joke", produces = "application/json", method = {RequestMethod.GET, RequestMethod.PUT})
     public Joke getRandomJoke() {
 
@@ -43,6 +49,9 @@ public class JokeController {
         return joke;
     }
 
+    @Operation(summary = "Retrieves all the jokes returned by /api/joke", parameters = {
+            @Parameter (name = "pattern", description = "Only jokes with the pattern will be displayed", required = false, example = "/api/search?pattern=your-value") })
+    @ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Successfully retrieved search")})
     @RequestMapping(value = "/api/search", produces = "application/json", method = {RequestMethod.GET, RequestMethod.PUT})
     public List<Joke> search(@RequestParam(defaultValue = "") String pattern) {
 

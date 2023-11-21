@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.roberto.ns</groupId>
 	<artifactId>joke</artifactId>
-	<version>1.0.1-PROD</version>
+	<version>1.0.2-PROD</version>
 	<name>ns-joke</name>
 	<description>ns-joke</description>
 	<properties>
@@ -84,6 +84,7 @@
 						<exclude>com/leong/joke/exception/JokeException.class</exclude>
 						<exclude>com/leong/joke/util/CONSTS.class</exclude>
 						<exclude>com/leong/joke/jpa/JokeEntity.class</exclude>
+						<exclude>com/leong/joke/configuration/SwaggerConfiguration.class</exclude>
 					</excludes>
 
 				</configuration>
