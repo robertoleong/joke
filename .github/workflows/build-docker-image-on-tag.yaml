@@ -33,13 +33,13 @@ jobs:
 
       - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5.1.0
         with:
           context: .
           push: true
           tags: |
-            ghcr.io/robertoleong//joke:${{ env.VERSION }}
-            ghcr.io/robertoleong//joke:latest
+            ghcr.io/robertoleong/joke:${{ env.VERSION }}
+            ghcr.io/robertoleong/joke:latest
       #- name: Build Docker image
 
       # run: |
