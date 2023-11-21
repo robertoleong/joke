@@ -1,8 +1,3 @@
-#on:
-#  push:
-#    tags:
-#      - '*PROD*'
-#
 on:
   push:
     branches:
@@ -40,11 +35,3 @@ jobs:
           tags: |
             ghcr.io/robertoleong/joke:${{ env.VERSION }}
             ghcr.io/robertoleong/joke:latest
-      #- name: Build Docker image
-
-      # run: |
-       #   docker build -t joke .
-        #  docker tag joke ghcr.io/robertoleong/joke:${{ env.VERSION }}
-
-         # docker tag joke  ghcr.io/robertoleong/joke:latest
-          #docker push  ghcr.io/robertoleong/joke
