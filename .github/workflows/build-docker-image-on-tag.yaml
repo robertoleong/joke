@@ -31,9 +31,20 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build Docker image
-        run: |
-          docker build -t joke .
-          docker tag joke  ghcr.io/robertoleong/joke:latest
-          docker tag joke ghcr.io/robertoleong/joke:${{ env.VERSION }}
-          docker push  ghcr.io/robertoleong/joke
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/robertoleong//joke:${{ env.VERSION }}
+            ghcr.io/robertoleong//joke:latest
+      #- name: Build Docker image
+
+      # run: |
+       #   docker build -t joke .
+        #  docker tag joke ghcr.io/robertoleong/joke:${{ env.VERSION }}
+
+         # docker tag joke  ghcr.io/robertoleong/joke:latest
+          #docker push  ghcr.io/robertoleong/joke
