@@ -80,4 +80,15 @@ To reflect the changes in **application.properties** a rebuild of the applicatio
 To be discussed in a interview.
 
 ## 6. Testing
+Jacoco is used to generate testing coverage, the file can be found in this location:
+(assuming maven was used to package the application)
+
+~/joke/target/site/jacoco$/index.html
+
+From our testing in linux, firefox displays the page correctly, chrome not.
+
+## 7. CI/CD
+There's a github action that triggers on every push request. It builds, tests and creates
+a docker image which is then uploaded to a docker repository.
+
 

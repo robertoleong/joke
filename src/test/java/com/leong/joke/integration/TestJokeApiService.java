@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.leong.joke.domain.Joke;
 import com.leong.joke.exception.JokeException;
 import com.leong.joke.service.JokeApiService;
-
 import com.leong.joke.util.CONSTS;
 import com.leong.joke.util.JsonUtil;
 import org.junit.jupiter.api.Assertions;
