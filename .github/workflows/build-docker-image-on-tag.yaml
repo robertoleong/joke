@@ -22,9 +22,6 @@ jobs:
         run: |
              VERSION=$(./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout)
              echo "VERSION=${VERSION}" >> $GITHUB_ENV
-      - name: Print version
-        run: echo ${{ env.VERSION }}
-
       - name: Build and test
         run: ./mvnw clean package
       - name: Login to Docker Hub
@@ -38,4 +35,5 @@ jobs:
         run: |
           docker build -t joke .
           docker tag joke  ghcr.io/robertoleong/joke:latest
+          docker tag joke  ghcr.io/robertoleong/joke:${{ env.VERSION }}
           docker push  ghcr.io/robertoleong/joke
