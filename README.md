@@ -22,11 +22,11 @@ git clone https://github.com/robertoleong/joke.git
 
 ### Go to the joke directory and build:
 
-mvn clean package
+./mvnw clean package
 
 ### Start spring-boot application (stop docker container if it's still running)
 
-mvn spring-boot:start
+./mvnw spring-boot:start
 
 ### Test with curl
 
@@ -38,7 +38,7 @@ http://localhost:8080/api/joke
 
 ### Stop spring-boot application 
 
-mvn spring-boot:stop
+./mvnw spring-boot:stop
 
 ## 3. Extra functionality - JPA
 
