@@ -1,5 +1,7 @@
 # Developer Manual for NS Task
 
+The api is available under **/api/joke**
+
 ## Run the application
 
 ### 1. Using a docker image
@@ -104,7 +106,7 @@ To be discussed in a interview.
 Jacoco is used to generate testing coverage, the file can be found in this location:
 (assuming maven was used to package the application)
 
-~/joke/target/site/jacoco$/index.html
+~/joke/target/site/jacoco/index.html
 
 From our testing in linux, firefox displays the page correctly, chrome not.
 
