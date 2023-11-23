@@ -70,6 +70,8 @@ in property
 
 **joke.url.blacklist**
 
+Safe jokes were implemented by adding **safe-mode** parameter to the external api request
+
 Any filter supported by the jokeapi can be added or removed here.
 
 The **amount** property should be a value between 1-10.
