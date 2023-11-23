@@ -42,7 +42,9 @@ public class JokeController {
     public Joke getRandomJoke() {
 
         Joke joke = jokeService.getJoke();
-        if (!joke.id().equals(CONSTS.ERROR_ID) && !repo.existsByJokeId(joke.id())) {
+
+        // extra save functionality, for testing with mocks getJoke() might return null
+        if (joke != null && !joke.id().equals(CONSTS.ERROR_ID) && !repo.existsByJokeId(joke.id())) {
 
             repo.save(new JokeEntity(joke.id(), joke.randomJoke()));
             logger.debug("Joke: " + joke + " has been saved.");

@@ -14,7 +14,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(value = {JokeException.class, RuntimeException.class})
+    @ExceptionHandler(value = {JokeException.class, Throwable.class})
     protected ResponseEntity<Object> handleExceptionInternal(JokeException ex) {
         return new ResponseEntity<>(new Joke(CONSTS.ERROR_ID, ex.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 
