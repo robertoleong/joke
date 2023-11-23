@@ -35,7 +35,9 @@ public class JokeController {
 
     @Operation(summary = "Retrieves an array of jokes taken from the external API. The shortest one is picked.\n" +
             "The joke being returned is safe to display and are not sexist or explicit")
-    @ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Successfully retrieved joke")})
+    @ApiResponses(value = {
+                    @ApiResponse(responseCode = "200", description = "Successfully retrieved joke"),
+                    @ApiResponse(responseCode = "500", description = "Error while processing error")})
     @RequestMapping(value = "/api/joke", produces = "application/json", method = {RequestMethod.GET, RequestMethod.PUT})
     public Joke getRandomJoke() {
 

@@ -21,6 +21,7 @@ http://localhost:8080/api/joke
 git clone https://github.com/robertoleong/joke.git
 
 ### Go to the joke directory and build:
+#### Use mvnw.cmd if Windows
 
 ./mvnw clean package
 
@@ -98,6 +99,10 @@ curl -w '\n' --insecure https://localhost/api/joke
 https://localhost/api/joke
 
 ## 7. Implementation details
+### 7.1 Exception handling
+A global error handler was implemented in com.leong.joke.exception.RestExceptionHandler.
+In more complex system ResponseStatusException can be used to fine grain error handling.
+
 To be discussed in a interview.
 
 ## 8. Testing

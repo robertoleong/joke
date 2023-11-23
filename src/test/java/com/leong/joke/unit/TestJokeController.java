@@ -86,9 +86,18 @@ class TestJokeController {
     @Test
     void searchNotEmpty() throws Exception {
         when(jokeApiService.getJoke()).thenReturn(new Joke("10000", CONSTS.DUMMY));
-        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/api/joke")).andReturn();
-        mvcResult = mvc.perform(MockMvcRequestBuilders.get("/api/search?pattern=")).andReturn();
+        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/api/search?pattern=")).andReturn();
         String response = mvcResult.getResponse().getContentAsString();
         assertTrue(response.contains(CONSTS.DUMMY));
     }
+
+
+/*    @Test
+    void runtimeException() throws Exception {
+        when(jokeApiService.getJoke()).thenThrow(new RuntimeException("Test"));
+        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/api/joke")).andReturn();
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.value(), mvcResult.getResponse().getStatus());
+
+
+    }*/
 }
