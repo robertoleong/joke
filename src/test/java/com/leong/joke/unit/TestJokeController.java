@@ -90,5 +90,5 @@ class TestJokeController {
         String response = mvcResult.getResponse().getContentAsString();
         assertTrue(response.contains(CONSTS.DUMMY));
     }
-    
+
 }
