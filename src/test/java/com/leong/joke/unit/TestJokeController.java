@@ -90,14 +90,5 @@ class TestJokeController {
         String response = mvcResult.getResponse().getContentAsString();
         assertTrue(response.contains(CONSTS.DUMMY));
     }
-
-
-/*    @Test
-    void runtimeException() throws Exception {
-        when(jokeApiService.getJoke()).thenThrow(new RuntimeException("Test"));
-        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/api/joke")).andReturn();
-        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.value(), mvcResult.getResponse().getStatus());
-
-
-    }*/
+    
 }
