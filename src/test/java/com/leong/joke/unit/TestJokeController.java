@@ -3,6 +3,7 @@ package com.leong.joke.unit;
 import com.leong.joke.JokeApplication;
 import com.leong.joke.domain.Joke;
 import com.leong.joke.exception.JokeException;
+import com.leong.joke.jpa.JokeRepository;
 import com.leong.joke.service.JokeApiService;
 import com.leong.joke.util.CONSTS;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,8 +18,10 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import static org.hibernate.internal.util.collections.CollectionHelper.listOf;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 
@@ -33,6 +36,9 @@ class TestJokeController {
 
     @MockBean
     private JokeApiService jokeApiService;
+
+    //@MockBean
+    //JokeRepository repo;
 
     @BeforeEach
     void setUp() {
@@ -76,7 +82,6 @@ class TestJokeController {
 
     @Test
     void searchEmpty() throws Exception {
-
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/api/search?pattern=fsdfsdfsd")).andReturn();
         String response = mvcResult.getResponse().getContentAsString();
         assertTrue(response.contains(CONSTS.NO_RESULTS));
@@ -85,7 +90,9 @@ class TestJokeController {
 
     @Test
     void searchNotEmpty() throws Exception {
-        when(jokeApiService.getJoke()).thenReturn(new Joke("10000", CONSTS.DUMMY));
+        Joke dummy = new Joke("10000", CONSTS.DUMMY);
+        when(jokeApiService.getJoke()).thenReturn(dummy);
+        when(jokeApiService.search(anyString())).thenReturn(listOf(dummy));
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/api/search?pattern=")).andReturn();
         String response = mvcResult.getResponse().getContentAsString();
         assertTrue(response.contains(CONSTS.DUMMY));

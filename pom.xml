@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.roberto.ns</groupId>
 	<artifactId>joke</artifactId>
-	<version>1.0.7-PROD</version>
+	<version>1.0.8-PROD</version>
 	<name>ns-joke</name>
 	<description>ns-joke</description>
 	<properties>

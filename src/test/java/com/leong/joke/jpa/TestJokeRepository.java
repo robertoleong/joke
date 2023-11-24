@@ -17,9 +17,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 //@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class TestJokeRepository {
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
     @Autowired
     protected JokeRepository repo;
 

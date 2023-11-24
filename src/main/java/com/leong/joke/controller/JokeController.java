@@ -43,13 +43,8 @@ public class JokeController {
 
         Joke joke = jokeService.getJoke();
 
-        // extra save functionality, for testing with mocks getJoke() might return null
-        if (joke != null && !joke.id().equals(CONSTS.ERROR_ID) && !repo.existsByJokeId(joke.id())) {
-
-            repo.save(new JokeEntity(joke.id(), joke.randomJoke()));
-            logger.debug("Joke: " + joke + " has been saved.");
-        }
-
+        // save for JPA functionality
+        jokeService.saveJoke(joke);
         return joke;
     }
 
@@ -59,9 +54,8 @@ public class JokeController {
     @RequestMapping(value = "/api/search", produces = "application/json", method = {RequestMethod.GET, RequestMethod.PUT})
     public List<Joke> search(@RequestParam(defaultValue = "") String pattern) {
 
-        List<JokeEntity> entities = repo.findByTextContains(pattern);
-        List<Joke> jokes = entities.stream().map(entity -> new Joke(entity.getJokeId(), entity.getText())).toList();
 
+        List<Joke> jokes = jokeService.search(pattern);
         logger.debug("Search with pattern: " + (pattern.isEmpty() ? "no pattern inserted" : pattern));
         logger.debug("Results: " + jokes);
         if (jokes.isEmpty()) {
