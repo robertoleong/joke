@@ -9,6 +9,8 @@ import com.leong.joke.jpa.JokeRepository;
 import com.leong.joke.util.ApiRequest;
 import com.leong.joke.util.CONSTS;
 import com.leong.joke.util.JsonUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,8 @@ public class JokeApiService {
     private final String blacklist;
 
     private final JokeRepository repo;
+
+    Logger logger = LoggerFactory.getLogger(JokeApiService.class);
 
     public JokeApiService(
             @Value("${joke.url}") String url,
@@ -53,7 +57,12 @@ public class JokeApiService {
     public void saveJoke(Joke joke) {
         // extra save functionality, for testing with mocks getJoke() might return null
         if (joke != null && !joke.id().equals(CONSTS.ERROR_ID) && !repo.existsByJokeId(joke.id())) {
-            repo.save(new JokeEntity(joke.id(), joke.randomJoke()));
+            try {
+                repo.save(new JokeEntity(joke.id(), joke.randomJoke()));
+            } catch (Exception e) {
+                logger.error("Error wile saving joke: " + joke, e);
+                throw new JokeException(e.getMessage());
+            }
         }
     }
 
@@ -63,6 +72,7 @@ public class JokeApiService {
             List<JokeEntity> entities = repo.findByTextContains(pattern);
             jokes = entities.stream().map(entity -> new Joke(entity.getJokeId(), entity.getText())).toList();
         } catch (Exception e) {
+            logger.error("Error while searching for patter: " + pattern, e);
             throw new JokeException(e.getMessage());
         }
 

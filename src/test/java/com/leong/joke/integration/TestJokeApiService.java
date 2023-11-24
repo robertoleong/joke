@@ -74,7 +74,9 @@ class TestJokeApiService {
             service.getJoke();
         } catch (JokeException e) {
             // it's supposed to fail since http is not supported
+            return;
         }
+        fail();
     }
 
     @Test
