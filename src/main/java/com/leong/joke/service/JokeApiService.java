@@ -26,7 +26,7 @@ public class JokeApiService {
 
     private final JokeRepository repo;
 
-    Logger logger = LoggerFactory.getLogger(JokeApiService.class);
+    final Logger logger = LoggerFactory.getLogger(JokeApiService.class);
 
     public JokeApiService(
             @Value("${joke.url}") String url,

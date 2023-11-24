@@ -1,15 +1,13 @@
 package com.leong.joke.util;
 
 import com.leong.joke.exception.JokeException;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 public class ApiRequest {
 
-    String url;
+    final String url;
 
     public ApiRequest(String url) {
         this.url = url;

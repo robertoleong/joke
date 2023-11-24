@@ -1,8 +1,6 @@
 package com.leong.joke.controller;
 
 import com.leong.joke.domain.Joke;
-import com.leong.joke.jpa.JokeEntity;
-import com.leong.joke.jpa.JokeRepository;
 import com.leong.joke.service.JokeApiService;
 import com.leong.joke.util.CONSTS;
 import io.swagger.v3.oas.annotations.Operation;
@@ -21,16 +19,13 @@ import java.util.List;
 
 @RestController
 public class JokeController {
-    Logger logger = LogManager.getLogger(JokeController.class);
+    final Logger logger = LogManager.getLogger(JokeController.class);
 
 
     private final JokeApiService jokeService;
 
-    private final JokeRepository repo;
-
-    public JokeController(@Autowired JokeApiService jokeService, @Autowired JokeRepository repo) {
+    public JokeController(@Autowired JokeApiService jokeService) {
         this.jokeService = jokeService;
-        this.repo = repo;
     }
 
     @Operation(summary = "Retrieves an array of jokes taken from the external API. The shortest one is picked.\n" +
