@@ -16,7 +16,7 @@ jobs:
              VERSION=$(./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout)
              echo "VERSION=${VERSION}" >> $GITHUB_ENV
       - name: Build and test
-        run: ./mvnw clean package -DskipTests
+        run: ./mvnw clean package
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -31,5 +31,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/robertoleong/joke-https:${{ env.VERSION }}
-            ghcr.io/robertoleong/joke-https:latest
+            ghcr.io/robertoleong/joke:${{ env.VERSION }}
+            ghcr.io/robertoleong/joke:latest
