@@ -31,5 +31,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/robertoleong/joke:${{ env.VERSION }}
-            ghcr.io/robertoleong/joke:latest
+            ghcr.io/robertoleong/joke-https:${{ env.VERSION }}
+            ghcr.io/robertoleong/joke-https:latest

@@ -107,7 +107,9 @@ https://localhost/api/joke
 A global error handler was implemented in com.leong.joke.exception.RestExceptionHandler.
 In more complex system ResponseStatusException can be used to fine grain error handling.
 
-To be discussed in a interview.
+### 7.2 Interfaces or not
+I only provide implementation classes instead of the typical Interface + InterfaceImpl for the JokeApiService and JokeRepository.
+DUe to the limited scope of the application, better code readability and single implementation I decided this was the best route.
 
 ## 8. Testing
 Jacoco is used to generate testing coverage, the file can be found in this location:
