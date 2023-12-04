@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: joke
+  name: joke
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: joke
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: joke
+    spec:
+      containers:
+      - image: ghcr.io/robertoleong/joke:1.0.10-prod
+        name: joke
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}

@@ -31,8 +31,8 @@ public class JokeController {
     @Operation(summary = "Retrieves an array of jokes taken from the external API. The shortest one is picked.\n" +
             "The joke being returned is safe to display and are not sexist or explicit")
     @ApiResponses(value = {
-                    @ApiResponse(responseCode = "200", description = "Successfully retrieved joke"),
-                    @ApiResponse(responseCode = "500", description = "Error while processing error")})
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved joke"),
+            @ApiResponse(responseCode = "500", description = "Error while processing error")})
     @RequestMapping(value = "/api/joke", produces = "application/json", method = {RequestMethod.GET, RequestMethod.PUT})
     public Joke getRandomJoke() {
 
@@ -44,11 +44,10 @@ public class JokeController {
     }
 
     @Operation(summary = "Retrieves all the jokes returned by /api/joke", parameters = {
-            @Parameter (name = "pattern", description = "Only jokes with the pattern will be displayed", required = false, example = "/api/search?pattern=your-value") })
-    @ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Successfully retrieved search")})
+            @Parameter(name = "pattern", description = "Only jokes with the pattern will be displayed", required = false, example = "/api/search?pattern=your-value")})
+    @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Successfully retrieved search")})
     @RequestMapping(value = "/api/search", produces = "application/json", method = {RequestMethod.GET, RequestMethod.PUT})
     public List<Joke> search(@RequestParam(defaultValue = "") String pattern) {
-
 
         List<Joke> jokes = jokeService.search(pattern);
         logger.debug("Search with pattern: " + (pattern.isEmpty() ? "no pattern inserted" : pattern));

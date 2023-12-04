@@ -126,3 +126,5 @@ a docker image which is then uploaded to a [docker repository](https://github.co
 ## 10. EKS
 The application has been deployed in a Amazon Kubernetes cluster with 3 nodes.
 For budget reasons is currently unavailable. It will be available in an interview.
+
+http://a9ec0089325b3401085e8e45219f1482-1822804252.us-east-2.elb.amazonaws.com/api/joke
