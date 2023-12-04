@@ -1,6 +1,6 @@
 # Developer Manual for NS Task
 
-The api is available under **/api/joke**
+The api is available under **http://localhost:8080/api/joke**
 
 ## Run the application
 
