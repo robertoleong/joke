@@ -6,7 +6,7 @@ metadata:
     app: joke
   name: joke
 spec:
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
       app: joke
@@ -18,7 +18,7 @@ spec:
         app: joke
     spec:
       containers:
-      - image: ghcr.io/robertoleong/joke:1.0.10-prod
+      - image: ghcr.io/robertoleong/joke:latest
         name: joke
         ports:
         - containerPort: 8080
